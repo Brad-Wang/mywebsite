@@ -1,0 +1,83 @@
+/**************通用样式开始*************/
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+ul,ol{
+	list-style: none;
+}
+img{
+  border: 0;
+}
+body{
+	font-family: sans-serif,'等线','微软雅黑','黑体';
+}
+/**************通用样式结束*************/
+
+/**************top开始*************/
+#top{
+	width: 100%;
+	height: 169px;
+	position: relative;
+	background: url(../img/single-top.jpg) no-repeat;
+	z-index: 1;
+	padding-top: 90px;
+}
+#top:before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 259px;
+	background: black;
+	opacity: 0.77;
+	filter: Alpha(opacity=77);
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+#top .blog-name p{
+	margin-top: 10px;
+	text-align: center;
+	font-weight: 200;
+}
+#top .blog-name h1{
+	text-align: center;
+	font-size: 35px;
+	color: white;
+	font-weight: 400;
+}
+#top .blog-name a{
+	color: white;
+}
+/**************top开始*************/
+
+/**************content开始*************/
+#content{
+	width: 100%;
+}
+#content .first-img{
+	display: block;
+	margin: 60px auto;
+	width: 80%;
+}
+#content .text{
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 100px;
+}
+#content .text .title{
+	color: #262626;
+	font-size: 30px;
+}
+#content .text .addtime{
+	font-weight: 600;
+}
+#content .text .detail{
+	line-height: 2;
+	color:  #3c3c3c;
+	font-style: 15px;
+}
+/**************content开始*************/

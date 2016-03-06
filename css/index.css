@@ -24,7 +24,7 @@ body{
 	color: white;
 	text-align: center;
 	font-weight: 100;
-	font-size: 40px;
+	font-size: 37px;
 	margin-top: 65px;
 	margin-bottom: 20px;
 }
@@ -33,6 +33,13 @@ body{
 	width: 85px;
 	background: white;
 	margin: 0 auto;
+}
+.bottom-underline{
+	height: 1px;
+	width: 85px;
+	background: white;
+	margin: 60px auto;
+	clear: both;
 }
 /**************通用样式结束*************/
 
@@ -69,7 +76,7 @@ body{
 #nav ul span p{
 	width: 80px;
 	font-size: 14px;
-	padding-left: 28px;
+	padding-left: 35px;
 	cursor: pointer;
 	display: none;
 	color: white;
@@ -226,20 +233,362 @@ body{
 	cursor: pointer;
 	display: block;
 	margin: 0px auto;
-	filter: Alpha(opacity=100);
-	opacity: 1;
-}
-#about .bottom-underline{
-	height: 1px;
-	width: 85px;
-	background: white;
-	margin: 60px auto;
 }
 /**************about结束*************/
 
-/**************work开始*************/
-#work{
-	background: #00b4ff;
+/**************portfolio开始*************/
+#portfolio{
+	background: #097ECB;
+}
+#portfolio .work{
+	width: 980px;
+	margin: 30px auto;
+	margin-bottom: 100px;
+}
+#portfolio .work-block{
+	width: 300px;
+	height: 300px;
+	position: relative;
+	float: left;
+	margin-right: 40px;
+	margin-bottom: 40px;
+	background: #0875BD;
+}
+#portfolio .work-block .show-img{
+	width: 260px;
+	height: 165px;
+	overflow: hidden;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 1;
+}
+#portfolio .work-block .show-mask{
+	width: 260px;
+	height: 165px;
+	position: absolute;
+	cursor: pointer;
+	top: 20px;
+	left: 20px;
+	opacity: 0;
+	filter: Alpha(opacity=0);
+	z-index: 2;
+}
+#portfolio .work-block .show-img img{
+	width: 260px;
+}
+#portfolio .work-block .show-text{
+	width: 260px;
+	margin: 0 auto;
+	margin-top: 195px;
+}
+#portfolio .work-block h5{
+	color: white;
+	font-weight: 500;
+	font-size: 17px;
+}
+#portfolio .work-block p{
+	display: block;
+	color: white;
+	margin-top: 10px;
+	font-size: 15px;
+	font-weight: 100;
+}
+/**************portfolio结束*************/
+
+/**************por-details开始*************/
+#por-details{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: white;
+	z-index: 99999;
+	overflow:scroll;
+	display: none;
+	opacity: 1;
+	filter: Alpha(opacity=100);
+}
+#por-details .text p{
+	color: black;
+	font-size: 14px;
+	line-height: 30px;
+	font-weight: 400;
+}
+#por-details .title{
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	color: white;
+	font-size: 30px;
+	font-weight: 200;
+	background: #333333;
 }
 
-/**************work结束*************/
+#por-details .title .title-close{
+	width: 70px;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	font-size: 40px;
+	background: #1D1D1D;
+	color: white;
+	float: right;
+	cursor: pointer;
+}
+#por-details .body{
+	width: 906px;
+	margin: 0 auto;
+	margin-top: 80px;
+	clear: both;
+}
+#por-details .body img{
+	width: 904px;
+	display: block;
+	border: 1px solid black;
+	/*clear: both;*/
+	/*margin-top: 100px;*/
+	/*为什么清除浮动不好使？？*/
+}
+#por-details .text{
+	width: 906px;
+	padding-bottom: 30px;
+	clear: both;
+}
+#por-details .text-details{
+	width: 350px;
+	float: left;
+	margin-bottom: 20px;
+}
+#por-details .text-details div{
+	border-bottom: 1px solid #ccc;
+}
+#por-details .text-content{
+	display: block;
+	width: 520px;
+	font-size: 16px;
+	font-weight: 500;
+	float: right;
+	margin-bottom: 20px;
+}
+
+/**************por-details结束*************/
+
+/**************blog开始*************/
+#blog{
+	background: #F0F0F0;
+}
+#blog .head-top{
+	color: black;
+}
+#blog .head-underline{
+	background: black;
+}
+#blog .content{
+	margin: 0 auto;						
+	width: 1040px;
+	padding-top: 10px;
+}
+#blog .content ul{
+	float: left;
+	margin-top: 40px;
+	margin-right: 40px;
+	width: 320px;
+}
+#blog .content .right{
+	margin-right: 0px;
+}
+#blog .content ul li{
+	margin-bottom: 20px;
+	padding: 20px;
+	background: white;
+}
+#blog .content ul li img{
+	width: 280px;
+	margin-bottom: 10px;
+}
+#blog .content ul li span{
+	color: black;
+	font-weight: 400;
+}
+#blog .content ul li p{
+	width: 280px;
+	color: #595959;
+	font-weight: 350;
+}
+#blog .content ul li h3{
+	width: 280px;
+	color: #595959;
+	font-weight: 800;
+}
+#blog .content ul li button{
+	width: 126px;
+	height: 50px;
+	background: #64c9db;
+	border:none;
+	color: white;
+	font-family: sans-serif,'等线','微软雅黑','黑体';
+	font-size: 17px;
+	font-weight: 800;
+	cursor: pointer;
+	float: right;
+}
+#blog .content ul li div{
+	width: 100%;
+	height: 0;
+	clear: both;
+}
+#blog .bottom{
+	width: 100%;
+	height: 80px;
+	clear: both;
+}
+#blog .bottom button{
+	
+}
+/**************blog结束*************/
+
+/**************like开始*************/
+#like{
+	overflow: hidden;
+	background: white;
+}
+#like .title-top{
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	z-index: 2;
+}
+#like .like-head-top{
+	color: white;
+	text-align: center;
+	font-weight: 100;
+	font-size: 37px;	
+}
+#like .like-head-underline{
+	height: 1px;
+	width: 85px;
+	background: white;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+#like .img{
+	width: 100%;
+}
+#like .img img{
+	width: 100%;
+	vertical-align:bottom;
+	display: none;
+}
+#like .img .selected{
+	display: block;
+}
+#like .change{
+	width: 98px;
+	height: 15px;
+	position: absolute;
+	z-index: 3;
+	margin-left: 50%;
+	left: -43px;
+	top: 470px;
+}
+#like .change span{
+	display: block;
+	float: left;
+	margin-right: 20px;
+	width: 16px;
+	height: 16px;
+	background: url(../img/css.png) -39px -227px;
+	cursor: pointer;
+}
+#like .change .last{
+	margin-right: 0;
+}
+#like .change .selected{
+	background: url(../img/css.png) -0px -227px;
+}
+
+/**************like结束*************/
+
+/**************contact开始*************/
+#contact{
+	background: #fff;
+}
+#contact .head-top{
+	color: #000;
+}
+#contact .head-underline{
+	background: #cccccc;
+}
+#contact .explain{
+	margin-top: 20px;
+	text-align: center;
+	font-weight: 400;
+	font-size: 17px;
+	color: #888;
+	line-height: 30px;
+}
+#contact form{
+	display: block;
+	width: 293px;
+	margin: 0 auto;
+	margin-top: 60px;
+	padding-bottom: 70px;
+}
+#contact .form-row input{
+	width: 273px;
+	height: 43px;
+	line-height: 43px;
+	border: solid 1px #e5e5e5;
+	padding: 0 10px;
+	margin-bottom: 13px;
+	background: #f8f8f8;
+	font-family: sans-serif,'等线','微软雅黑','黑体';
+	font-size: 15px;
+}
+#contact .form-row textarea{
+	width: 273px;
+	max-width: 273px;
+	border: solid 1px #e5e5e5;
+	padding: 10px;
+	margin-bottom: 13px;
+	background: #f8f8f8;
+	font-family: sans-serif,'等线','微软雅黑','黑体';
+	font-size: 15px;
+}
+#contact .form-submit input{
+	width: 295px;
+	height: 43px;
+	background: #00b4ff;
+	border: none;
+	color: white;
+	font-family: sans-serif,'等线','微软雅黑','黑体';
+	font-size: 18px;
+	font-weight: 400;
+	cursor: pointer;
+}
+#contact .contact-other{
+	width: 100%;
+	height: 80px;
+	background: #333;
+}
+/*#contact .contact-other .container{
+	height: 50px;
+	width: 280px;
+	margin: 0 auto;
+	padding-top: 15px;
+}
+#contact .contact-other .container div{
+	width: 50px;
+	height: 50px;
+	margin-right: 60px;
+	float: left;
+}
+#contact .contact-other .container .wexin{
+	background: url(../img/css.png) no-repeat -75px -76px;
+}
+#contact .contact-other .container .weibo{
+	margin-right: 0;
+}*/
+/**************contact结束*************/
+
