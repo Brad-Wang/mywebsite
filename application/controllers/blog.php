@@ -26,7 +26,8 @@ class Blog extends CI_Controller{
         $type = $this->input->post('type');
         $content = $this->input->post('content');
         $summary = $this->input->post('summary');
-        $img = $array['full_path'];
+        $arr1 = explode("/", $array['full_path']);
+        $img = $arr1[count($arr1)-2].'/'.$arr1[count($arr1)-1];
 
         $this->load->model('blog_model');
         $result = $this->blog_model->save_blog($title,$type,$content,$img,$author,$summary);
@@ -49,6 +50,23 @@ class Blog extends CI_Controller{
         $this->load->model('blog_model');
         $row = $this->blog_model->delete_blog_by_id($blog_id);
         echo $row;
+    }
+
+    public function get_blog()
+    {
+        $offset = $this->input->get('offset');
+        $this->load->model('blog_model');
+        $result = $this->blog_model->get_some_blog($offset);
+        echo json_encode($result);
+    }
+
+    public function get_single_blog()
+    {
+        $bid = $this->input->get('bid');
+        $this->load->model('blog_model');
+        $row = $this->blog_model->get_blog_by_id($bid);
+        $data['result'] = $row;
+        $this->load->view('blog',$data);
     }
 }
 ?>

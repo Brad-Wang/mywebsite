@@ -32,6 +32,12 @@ class User extends CI_Controller{
         $this->load->view('admin/admin-index');
     }
 
+    public function do_login_out()
+    {
+        $this->session->sess_destroy();
+        $this->load->view('admin/login');
+    }
+
 
 
 

@@ -1,6 +1,6 @@
 <?php
     if( $this->session->userdata('state')!=='yes' ){
-
+        redirect('user/admin_login');
     }
 ?>
 <header class="am-topbar admin-header">

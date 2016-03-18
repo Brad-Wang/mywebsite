@@ -68,82 +68,30 @@ $(function(){
 	// 2.文字动态生成
 
 	// 2.1 定义一个计数变量nTextAmount
-	var nTextAmount = 1;
-	
+	var sText = '我会一直相信';
+	var sTitle = '相信努力的力量';
 	// 2.2 开启定时器，动态生成文字
 	function appendText(){
+		console.log('haha');
+		var iText = 0;
+		var iTitle = 0;
 		setInterval(function(){
-		switch(nTextAmount){
-			case 1:
-			  $('#home>p').append('生');
-			  break;
-			case 2:
-			  $('#home>p').append('活');
-			  break;
-			case 3:
-			  $('#home>p').append('不');
-			  break;
-			case 4:
-			  $('#home>p').append('只');
-			  break;
-			case 5:
-			  $('#home>p').append('是');
-			  break;
-			case 6:
-			  $('#home>p').append('眼');
-			  break;
-			case 7:
-			  $('#home>p').append('前');
-			  break;
-			case 8:
-			  $('#home>p').append('的');
-			  break;
-			case 9:
-			  $('#home>p').append('苟');
-			  break;
-			case 10:
-			  $('#home>p').append('且');
-			  break;
-			case 11:
-			  $('#home>h1').append('还');
-			  break;
-			case 12:
-			  $('#home>h1').append('有');
-			  break;
-			case 13:
-			  $('#home>h1').append('诗');
-			  break;
-			case 14:
-			  $('#home>h1').append('和');
-			  break;
-			case 15:
-			  $('#home>h1').append('远');
-			  break;
-			case 16:
-			  $('#home>h1').append('方');
-			  break;
-			case 17:
-			  break;
-			case 18:
-			  break;
-			case 19:
-			  break;
-			case 20:
-			  break;
-			case 21:
-			  break;
-			case 22:
-			  break;
-			case 23:
-			  $('#home>p').empty();
-			  $('#home>h1').empty();
-			  break;
+			if(iText<(sText.length+2)){
+				$('#home p').append(sText[iText]);
+				iText++;
+				//console.log('iText<sText.length');
+			}else if(iTitle<(sTitle.length+6)){
+				$('#home h1').append(sTitle[iTitle]);
+				iTitle++;
+				//console.log('iTitle<sTitle.length');
+			}else if(iText>=(sText.length+2) && iTitle>=(sTitle.length+5)){
+				$('#home p').empty();
+				$('#home h1').empty();
+				iText = 0;
+				iTitle = 0;
+				//console.log('清空');
 			}
-			nTextAmount++;
-			if(nTextAmount == 24){
-				nTextAmount = 1;
-			}
-		},200);
+		},200)
 	}
 	// 2.3 页面文档就绪后加载页面
 	$(window).load(function(){
@@ -260,43 +208,49 @@ $(function(){
 		}
 	);
 
-	// $("#like .change span").hover(
-	// 	function(){
-	// 		$(this).siblings().removeClass('selected').end().addClass('selected');
-	// 		$("#like .img img").removeClass('selected');
-	// 		$($("#like .img img")[$(this).index()]).addClass('selected');
-	// 	}
-	// );
 
-	//7.like中的轮播图特效（利用渐变）
+	//7.like中的轮播图特效（左右滑动）
 
-	var iChange = 1;
+		var $Img = $('#like .img');
+		var iImgIndex = 1;
+		var $Title = $('#like .like-head-top');
+		var $Underline= $('#like .like-head-underline');
 
-	$(window).load(
-		function(){
-			setInterval(
-			function(){
-				if(iChange == 3){
-					iChange = 0;
-				}
-				$("#like .img img").animate({
-					opacity:0
-				},100).css({
-					display:"none",
-					opacity:1
+		function fnImgPlay(){
+			var sImgLeft = '-'+iImgIndex*100+'%';
+			if(iImgIndex == 1){
+				$Title.css({
+					color:'black'
 				});
-				$($("#like .img img")[iChange]).css({
-					display:"block",
-					opacity:0
-				}).animate({
-					opacity:1
-				},400);
-				$("#like .change span").removeClass('selected');
-				$($("#like .change span")[iChange]).addClass('selected');
-				iChange++;
-			},6000)
-		}	
-	);
+				$Underline.css({
+					background: 'black'
+				});
+			}else{
+				$Title.css({
+					color:'white'
+				});
+				$Underline.css({
+					background: 'white'
+				});
+			}
+			$Img.animate({
+				left: sImgLeft
+			},600,function(){
+				if(iImgIndex == 3){
+					iImgIndex = 1;
+					$Img.css({
+						left: 0
+					});
+				}else{
+					iImgIndex++;
+				}
+			});
+		}
+
+		setInterval(function(){
+			fnImgPlay();
+		},5000);
+
 
 	//8.上下滚动
 	$scroll = $("#nav li>a");
@@ -307,6 +261,136 @@ $(function(){
 		$('html,body').animate({scrollTop:$(this.hash).offset().top},800);
 	});
 
+	//9.blog中按钮变色（事件代理，事件委托）
+
+	$('#blog').on('mouseover','button',function(){
+		$(this).animate({
+			backgroundColor:'#333'
+		},200);
+	});
+	$('#blog').on('mouseout','button',function(){
+		$(this).stop().css({
+			background:'#64c9db'
+		});
+	});
+
+	//10.Ajax加载瀑布流
+
+	var $btn = $('#blog .bottom button');
+	var $loadi = 0;
+	function fnGetMinUL(){
+		var $uls = $('#blog .content ul');
+		var minUl = $uls.eq(0);
+		for(var i=1;i<$uls.length;i++){
+			if( $uls.eq(i).height() < minUl.height() ){
+				minUl = $uls.eq(i);
+			}
+		}
+		return minUl;
+	}
+
+	function fnGetBlog(){
+		$.get('blog/get_blog',{offset:$loadi},function(res){
+			for(var i=0;i<res.length;i++){
+				var oUl = fnGetMinUL();
+				var $html = '<li>' +
+						'<img src="'+ res[i].img +'" alt=""><br>' +
+						'<h3>'+res[i].title+'</h3><br>' +
+						'<span>'+ res[i].author +'</span> | <span>'+ res[i].addtime +'</span><br><br>'+
+						'<p>' +
+						res[i].summary +
+						'</p>'+
+						'<br>'+
+						'<button data-id="'+ res[i].id +'">详 情</button>' +
+						'<div></div>'+
+						'</li>';
+				oUl.append($html);
+			}
+			if(res.length<6){
+				$btn.prop({
+					disabled: true
+				}).css({
+					background: '#333'
+				}).empty().append('Unload');
+			}else{
+				$btn.empty().append('More...');
+			}
+		},'json');
+		$loadi++;
+	}
+
+	fnGetBlog();
+	$btn.on('click',function(){
+		$btn.empty().append('Loading...').prop({
+			disabled: true
+		});
+		fnGetBlog();
+	});
+
+	$('#blog .content').on('click','button',function(){
+		location.href = 'blog/get_single_blog?bid='+$(this).attr('data-id');
+	});
+
+	//11.留言提交
+
+	var $name = $('#contact .name'),
+		$email = $('#contact .email'),
+		$phone = $('#contact .phone'),
+		$content = $('#contact .content'),
+		$send = $('#contact .send'),
+		$contactInput = $('#contact input');
+	$send.on('click',function(){
+		$(this).prop({
+			disabled: true
+		});
+		if($name.val() == ''||$email.val() == ''||$phone.val() == ''||$content.val() == ''){
+			for(var i=0;i<$contactInput.length;i++){
+				if($contactInput.eq(i).val() == ''){
+					$contactInput.eq(i).css({
+						border:'2px solid red'
+					});
+				}
+			}
+			if($content.val() == ''){
+				$content.css({
+					border:'2px solid red'
+				});
+			}
+			alert('您有信息未填写');
+			$send.css({
+				background: '#00b4ff'
+			});
+			$send.removeProp('disabled');
+		}else if($content.length>=100){
+			alert('留言输入不可以超过100字');
+		}else{
+			$.get('message/save_message',{
+				name:$name.val(),
+				email:$email.val(),
+				phone:$phone.val(),
+				content:$content.val()
+			},function(res){
+				if(res){
+					alert('提交成功');
+				}else{
+					alert('提交失败，请稍后再试');
+				}
+				$send.css({
+					background: '#00b4ff'
+				})
+			},'text')
+		}
+	});
+	$contactInput.on('focus',function(){
+		$(this).css({
+			border:''
+		});
+	});
+	$content.on('focus',function(){
+		$(this).css({
+			border:''
+		});
+	});
 	
 
 

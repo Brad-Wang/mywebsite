@@ -19,10 +19,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('blog_model');
-		$result = $this->blog_model->get_some_blog();
-		$data['blog'] = $result;
-		$this->load->view('index',$data);
+		$this->load->view('index');
 	}
 }
 

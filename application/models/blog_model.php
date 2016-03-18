@@ -16,11 +16,18 @@ class Blog_model extends CI_Model{
         return $row = $this->db->query("delete from t_blog where id='$blog_id'");
     }
 
-    public function get_some_blog()
+    public function get_some_blog($offset)
     {
         $this->db->order_by('addtime','desc');
-        $result = $this->db->get('t_blog',6);
+        $result = $this->db->get('t_blog',6,$offset*6);
         return $result->result();
+    }
+
+    public function get_blog_by_id($bid)
+    {
+        $query = $this->db->query("select * from t_blog where id='$bid'");
+
+        return $query->row();
     }
 }
 ?>

@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>mywebsite</title>
+	<title>Betterwang</title>
 	<base href="<?php echo site_url();?>">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="alternate icon" type="image/png" href="img/favicon.png">
 </head>
 <body>
 	<div id="nav">
@@ -118,58 +119,58 @@
 					www.hdcx.net</p>
 				</div>
 			</div>
-			<div class="work-block">
-				<div class="show-img">
-					<img src="img/work-1.jpg" alt="">
-				</div>
-				<div class="show-mask">
-					<img src="img/mask.jpg" alt="">
-				</div>
-				<div class="show-text">
-					<h5>黑龙江大学学生创业协会官网</h5>
-					<p>黑龙江大学校级学生组织——黑龙江大学学生创业协会官方网站，创新创业展示类网站，网址:
-					www.hdcx.net</p>
-				</div>
-			</div>
-			<div class="work-block" style="margin-right: 0">
-				<div class="show-img">
-					<img src="img/work-1.jpg" alt="">
-				</div>
-				<div class="show-mask">
-					<img src="img/mask.jpg" alt="">
-				</div>
-				<div class="show-text">
-					<h5>黑龙江大学学生创业协会官网</h5>
-					<p>黑龙江大学校级学生组织——黑龙江大学学生创业协会官方网站，创新创业展示类网站，网址:
-					www.hdcx.net</p>
-				</div>
-			</div>
-			<div class="work-block">
-				<div class="show-img">
-					<img src="img/work-1.jpg" alt="">
-				</div>
-				<div class="show-mask">
-					<img src="img/mask.jpg" alt="">
-				</div>
-				<div class="show-text">
-					<h5>黑龙江大学学生创业协会官网</h5>
-					<p>黑龙江大学校级学生组织——黑龙江大学学生创业协会官方网站，创新创业展示类网站，网址:
-					www.hdcx.net</p>
-				</div>
-			</div>
-			<div class="work-block">
-				<div class="show-img">
-					<img src="img/work-1.jpg" alt="">
-				</div>
-				<div class="show-mask">
-					<img src="img/mask.jpg" alt="">
-				</div>
-				<div class="show-text">
-					<h5>黑龙江大学学生创业协会官网</h5>
-					<p>黑龙江大学校级学生组织——黑龙江大学学生创业协会官方网站，创新创业展示类网站，网址:
-					www.hdcx.net</p>
-				</div>
-			</div>	
+<!--			<div class="work-block">-->
+<!--				<div class="show-img">-->
+<!--					<img src="img/work-1.jpg" alt="">-->
+<!--				</div>-->
+<!--				<div class="show-mask">-->
+<!--					<img src="img/mask.jpg" alt="">-->
+<!--				</div>-->
+<!--				<div class="show-text">-->
+<!--					<h5>黑龙江大学学生创业协会官网</h5>-->
+<!--					<p>黑龙江大学校级学生组织——黑龙江大学学生创业协会官方网站，创新创业展示类网站，网址:-->
+<!--					www.hdcx.net</p>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="work-block" style="margin-right: 0">-->
+<!--				<div class="show-img">-->
+<!--					<img src="img/work-1.jpg" alt="">-->
+<!--				</div>-->
+<!--				<div class="show-mask">-->
+<!--					<img src="img/mask.jpg" alt="">-->
+<!--				</div>-->
+<!--				<div class="show-text">-->
+<!--					<h5>黑龙江大学学生创业协会官网</h5>-->
+<!--					<p>黑龙江大学校级学生组织——黑龙江大学学生创业协会官方网站，创新创业展示类网站，网址:-->
+<!--					www.hdcx.net</p>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="work-block">-->
+<!--				<div class="show-img">-->
+<!--					<img src="img/work-1.jpg" alt="">-->
+<!--				</div>-->
+<!--				<div class="show-mask">-->
+<!--					<img src="img/mask.jpg" alt="">-->
+<!--				</div>-->
+<!--				<div class="show-text">-->
+<!--					<h5>黑龙江大学学生创业协会官网</h5>-->
+<!--					<p>黑龙江大学校级学生组织——黑龙江大学学生创业协会官方网站，创新创业展示类网站，网址:-->
+<!--					www.hdcx.net</p>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="work-block">-->
+<!--				<div class="show-img">-->
+<!--					<img src="img/work-1.jpg" alt="">-->
+<!--				</div>-->
+<!--				<div class="show-mask">-->
+<!--					<img src="img/mask.jpg" alt="">-->
+<!--				</div>-->
+<!--				<div class="show-text">-->
+<!--					<h5>黑龙江大学学生创业协会官网</h5>-->
+<!--					<p>黑龙江大学校级学生组织——黑龙江大学学生创业协会官方网站，创新创业展示类网站，网址:-->
+<!--					www.hdcx.net</p>-->
+<!--				</div>-->
+<!--			</div>	-->
 		</div>
 		<div class="bottom-underline"></div>
 	</div>
@@ -179,71 +180,16 @@
 		<div class="head-underline"></div>
 		<div class="content">
 			<ul>
-				<li>
-					<img src="<?php echo $blog[0]->img; ?>" alt=""><br>
-					<h3><?php echo $blog[0]->title; ?></h3><br>
-					<span><?php echo $blog[0]->author; ?></span> | <span><?php echo $blog[0]->addtime; ?></span><br><br>
-					<p>
-						<?php echo $blog[0]->summary; ?>
-					</p>
-					<br>
-					<button>更 多</button>
-					<div></div>
-				</li>
-				<li>
-					<img src="<?php echo $blog[1]->img; ?>" alt=""><br>
-					<h3><?php echo $blog[1]->title; ?></h3><br>
-					<span><?php echo $blog[1]->author; ?></span> | <span><?php echo $blog[1]->addtime; ?></span><br><br>
-					<p>
-						<?php echo $blog[1]->summary; ?>
-					</p>
-					<br>
-					<button>更 多</button>
-					<div></div>
-				</li>
 			</ul>
 
 			<ul>
-				<li>
-					<img src="<?php echo $blog[2]->img; ?>" alt=""><br>
-					<h3><?php echo $blog[2]->title; ?></h3><br>
-					<span><?php echo $blog[2]->author; ?></span> | <span><?php echo $blog[2]->addtime; ?></span><br><br>
-					<p>
-						<?php echo $blog[2]->summary; ?>
-					</p>
-					<br>
-					<button>更 多</button>
-					<div></div>
-				</li>
-				<li>
-					<img src="<?php echo $blog[3]->img; ?>" alt=""><br>
-					<h3><?php echo $blog[3]->title; ?></h3><br>
-					<span><?php echo $blog[3]->author; ?></span> | <span><?php echo $blog[3]->addtime; ?></span><br><br>
-					<p>
-						<?php echo $blog[3]->summary; ?>
-					</p>
-					<br>
-					<button>更 多</button>
-					<div></div>
-				</li>
 			</ul>
 
 			<ul class="right">
-				<li>
-					<img src="<?php echo $blog[4]->img; ?>" alt=""><br>
-					<h3><?php echo $blog[4]->title; ?></h3><br>
-					<span><?php echo $blog[4]->author; ?></span> | <span><?php echo $blog[4]->addtime; ?></span><br><br>
-					<p>
-						<?php echo $blog[4]->summary; ?>
-					</p>
-					<br>
-					<button>更 多</button>
-					<div></div>
-				</li>
 			</ul>
 		</div>
 		<div class="bottom">
-			<button></button>
+			<button class="get-more">More...</button>
 		</div>
 	</div>
 
@@ -253,14 +199,10 @@
 			<div class="like-head-underline"></div>
 		</div>
 		<div class="img">
-			<img class="selected" src="img/like-1.jpg" alt="">
-			<img  src="img/like-2.jpg" alt="">
+			<img src="img/like-1.jpg" alt="">
+			<img src="img/like-2.jpg" alt="">
 			<img src="img/like-3.jpg" alt="">
-		</div>
-		<div class="change">
-			<span class="selected"></span>
-			<span></span>
-			<span class="last"></span>
+			<img src="img/like-1.jpg" alt="">
 		</div>
 	</div>
 
@@ -273,28 +215,28 @@
 		</h3>
 		<form action="post" class="message">
 			<div class="form-row">
-				<input type="text" placeholder="姓名">
+				<input type="text" placeholder="姓名" class="name">
 			</div>
 			<div class="form-row">
-				<input type="text" placeholder="邮箱">
+				<input type="text" placeholder="邮箱" class="email">
 			</div>
 			<div class="form-row">
-				<input type="text" placeholder="电话">
+				<input type="text" placeholder="电话" class="phone">
 			</div>
 			<div class="form-row">
-				<textarea name="" cols="5" rows="5" placeholder="留言"></textarea>
+				<textarea name="" cols="5" rows="5" placeholder="留言" class="content"></textarea>
 			</div>
 			<div class="form-submit">
-				<input type="submit" value="SEND">
+				<input type="button" value="SEND" class="send">
 			</div>
 		</form>
-		<div class="contact-other">
-			<div class="container">
-				<div class="wexin"></div>
-				<div class="phone"></div>
-				<div class="weibo "></div>
-			</div>
-		</div>
+<!--		<div class="contact-other">-->
+<!--			<div class="container">-->
+<!--				<div class="wexin"></div>-->
+<!--				<div class="phone"></div>-->
+<!--				<div class="weibo "></div>-->
+<!--			</div>-->
+<!--		</div>-->
 	</div>
 
 	<div id="por-details">
