@@ -72,7 +72,6 @@ $(function(){
 	var sTitle = '相信努力的力量';
 	// 2.2 开启定时器，动态生成文字
 	function appendText(){
-		console.log('haha');
 		var iText = 0;
 		var iTitle = 0;
 		setInterval(function(){
@@ -313,7 +312,9 @@ $(function(){
 					background: '#333'
 				}).empty().append('Unload');
 			}else{
-				$btn.empty().append('More...');
+				$btn.empty().append('More...').removeProp({
+					disabled: true
+				});
 			}
 		},'json');
 		$loadi++;

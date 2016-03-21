@@ -2,8 +2,7 @@
     <div class="am-offcanvas-bar admin-offcanvas-bar">
         <ul class="am-list admin-sidebar-list">
             <li><a href="user/go_admin_index"><span class="am-icon-home"></span> 首页</a></li>
-            <li><a href=""><span class="am-icon-pencil-square-o"></span> 作品发布(建设中)</a></li>
-            <li><a href=""><span class="am-icon-folder-open"></span> 作品管理(建设中)</a></li>
+            <li><a href="#"><span class="am-icon-pencil-square-o"></span> 封面管理（建设中）</a></li>
             <li><a href="blog/go_admin_push_blog"><span class="am-icon-send"></span> 文章发布</a></li>
             <li><a href="blog/go_admin_blog_list"><span class="am-icon-puzzle-piece"></span> 文章管理</a></li>
             <li><a href="message/go_admin_message_list"><span class="am-icon-search"></span> 留言管理</a></li>

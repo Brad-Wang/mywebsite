@@ -96,7 +96,7 @@
 		</div>
 
 		<div class="knowmore">
-			<button a="#">了解更多</button>
+			<button>了解更多</button>
 		</div>
 		<div class="bottom-underline"></div>
 

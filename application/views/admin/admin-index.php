@@ -31,7 +31,7 @@
 
   <!-- content start -->
   <div class="admin-content">
-<?php include 'admin-welcome.php'?>
+
   </div>
   <!-- content end -->
 
